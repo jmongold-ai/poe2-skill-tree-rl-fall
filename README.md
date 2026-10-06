@@ -75,6 +75,23 @@ Requires Python 3.9+.
 Optional flags: `--seed N` (graph and agent seed, default 0), `--episodes N`
 (default 100), `--budget N` (default 30).
 
+## Visualization
+
+`plot_builds.py` renders the synthetic tree and highlights the 30-point build
+each baseline produces, zoomed to the region around the root:
+
+```bash
+python plot_builds.py --out builds.pdf
+```
+
+The pre-rendered figure is included as `builds.pdf` (vector, for LaTeX) and
+`builds.png`. Suggested caption: *Builds produced by the two baselines on the
+synthetic 500-node skill tree (B = 30). Blue nodes are allocated, the red star
+is the root, grey nodes are travel nodes and orange nodes are notables. Greedy
+reaches more notables than the random walk, but it only sees immediate node
+value and so cannot plan through chains of travel nodes to the clusters
+behind them.*
+
 ## Example Output
 
 Timings vary by machine; objectives are reproducible for a given seed.
